@@ -1,0 +1,68 @@
+引脚接线说明
+
+单片机          wifi模块
+3.3               VCC
+GND               GND
+PB10              RXD
+PB11              TXD
+
+单片机            超声波模块
+3.3V              VCC 
+GND				  GND
+PB5               trig
+PB6               echo
+
+单片机            GPS模块
+5V                VCC 
+GND				  GND
+PA2               RXD
+PA3               TXD
+
+单片机           MQ2烟雾模块
+GND				  GND
+3.3V              VCC
+PA1               AO
+
+单片机           温湿度模块
+GND				  GND
+3.3V              VCC
+PB14              out
+
+单片机           继电器模块
+GND				  GND
+3.3V              VCC
+PB12              IN
+
+单片机           紫外线灯模块
+3.3V              VCC
+PA6               led
+
+///////////////模块链接/////////////////////////////////
+
+STM32F103C8T6单片机：          https://item.taobao.com/item.htm?spm=a1z09.2.0.0.51242e8dtUADGw&id=620064088112&_u=92k2dg5r26ea
+WiFi模块：                     https://detail.tmall.com/item.htm?id=610767917390&spm=a1z09.2.0.0.408f2e8dOW0jp1&_u=b2k2dg5r7573
+GPS模块：                      https://item.taobao.com/item.htm?spm=a1z09.2.0.0.51242e8dtUADGw&id=595353912203&_u=92k2dg5r38c0
+超声波模块：                   https://detail.tmall.com/item.htm?id=616025881990&spm=a1z09.2.0.0.408f2e8dOW0jp1&_u=b2k2dg5r7df1
+温湿度模块：				   https://item.taobao.com/item.htm?spm=a1z09.2.0.0.408f2e8dOW0jp1&id=25938484819&_u=b2k2dg5re39b
+紫外线灯：                     https://item.taobao.com/item.htm?spm=a1z10.3-c-s.w4002-21223910208.17.6c186a4b8eDlDT&id=544566598035
+继电器：					   https://detail.tmall.com/item.htm?id=16513774779&spm=a1z09.2.0.0.408f2e8dOW0jp1&_u=b2k2dg5r7e95
+
+///////////////模块工作原理说明/////////////////////////////////
+
+WiFi模块、GPS模块：采用的是单片机的串口通信原理，WiFi连接的单片机串口3，GPS连接的单片机串口2。wifi模块与onenet平台通信采用的是MQTT协议。
+
+超声波模块：采用的是IIC通信
+
+DHT11温湿度模块：
+
+继电器、紫外线模块：采用的是高低电平控制开启和关闭
+
+
+注：以上不懂的，可以先百度，例如什么是串口通信，什么是IIC通信，什么是MQTT协议。
+
+指令设置：
+
+设置湿度阈值   SET_HUM:85
+
+设置紫外线消毒时间  SET_TIME:5
+
